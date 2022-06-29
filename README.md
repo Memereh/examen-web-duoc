@@ -1,8 +1,8 @@
 ![enter image description here]()
 
-###Web de ventas Mascotas
+### Web de ventas Mascotas
 
-##Requisitos:
+## Requisitos:
 - Python 3.8.10
 - Django 4.0.5
 - Oracle Database19c - Oracle Cloud
