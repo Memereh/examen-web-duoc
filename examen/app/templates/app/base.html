@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <script src="{% static 'app/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/e0927e7329.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="body_divisor"></div>
+    <nav class="navbar navbar--edited">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://google.cl"><img src="{% static 'app/img/pagina/logo.png' %} " alt="logo" class="navbar--edited--image"></a>
+            <div class="test2">
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="ionicon svg_cart--edited" viewbox="0 0 512 512"><title>Cart</title><circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="400" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 80h64l48 272h256"/><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg></a>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="ionicon svg_user--edited" viewbox="0 0 512 512"><title>Person</title><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg></a>
+                <div class="test3">
+                    <button class="navbar-toggler navbar-toggler--edited" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <i class="fa-solid fa-bars fa-bars--edited"></i>
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                    </button>
+                </div>
+            </div>
+            <!-- <form class="d-flex">
+                <input class="form-control form-control--edited" type="search" placeholder="Encuentra el producto que buscas..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div style="width: 100%; background-color: #EDF2F4; padding-bottom: 3px;">
+        <form class="d-flex">
+            <input class="form-control form-control--edited" type="search" placeholder="Encuentra el producto que buscas..." aria-label="Search">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+        </form>
+    </div>
+        {% block contenido %}
+        {% endblock contenido %}
+    <footer>
+        <div class="footer_divisor">
+            <h1>CONTACTO</h1>
+            <h2>EMAIL:</h2>
+            <p>ecommerce@budstore.cl</p>
+            <h2>MESA CENTRAL:</h2>
+            <p>+569 1234 5678</p>
+            <h2>Horarios de atención:</h2>
+            <p>Lunes a Viernes <br>
+                08:30 a 17:30 <br>
+                Sábados <br>
+                09:00 a 14:00
+            </p>
+        </div>
+        <div class="footer_divisor">
+            <h1>ENCUÉNTRANOS</h1>
+            <p>Sucursales Buddies Store</p>
+            <h2>Oficinas Comerciales:</h2>
+            <p>Av.Concha Y Toro, Av. San Carlos 1340, <br> Puente Alto - Santiago.</p>
+            <h2>Otras Consultas:</h2>
+            <p>contacto@budstore.cl</p>
+        </div>
+        <div class="footer_divisor">
+            <h1>EMPRESA</h1>
+            <a href="#">
+                <h2>Sucursales</h2>
+            </a>
+            <a href="#">
+                <h2>Quienes somos</h2>
+            </a>
+            <a href="#">
+                <h2>Contacto</h2>
+            </a>
+        </div>
+        <div class="footer_divisor">
+            <h1>MÉTODOS DE PAGO</h1>
+            <img src="{% static 'app/img/pagina/medios_de_pago.png' %}" alt="medios de pago">
+        </div>
+        <div class="footer_divisor pb-3">
+            <h1>SÍGUENOS</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Logo Facebook</title><path fill="#EDF2F4" d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Logo Instagram</title><path fill="#EDF2F4" d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path fill="#EDF2F4" d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>
+        </div>
+    </footer>
+</body>
+</html>
+
+

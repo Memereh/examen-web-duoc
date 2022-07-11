@@ -1,326 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-    <script src="{% static 'app/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="https://kit.fontawesome.com/e0927e7329.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="body_divisor"></div>
-    <nav class="navbar navbar--edited">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://google.cl"><img src="img/pagina/logo.png" alt="" class="navbar--edited--image"></a>
-            <div class="test2">
-                <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="ionicon svg_cart--edited" viewbox="0 0 512 512"><title>Cart</title><circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="400" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 80h64l48 272h256"/><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg></a>
-                <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="ionicon svg_user--edited" viewbox="0 0 512 512"><title>Person</title><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg></a>
-                <div class="test3">
-                    <button class="navbar-toggler navbar-toggler--edited" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <i class="fa-solid fa-bars fa-bars--edited"></i>
-                        <!-- <span class="navbar-toggler-icon"></span> -->
-                    </button>
-                </div>
-            </div>
-            <!-- <form class="d-flex">
-                <input class="form-control form-control--edited" type="search" placeholder="Encuentra el producto que buscas..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div style="width: 100%; background-color: #EDF2F4; padding-bottom: 3px;">
-        <form class="d-flex">
-            <input class="form-control form-control--edited" type="search" placeholder="Encuentra el producto que buscas..." aria-label="Search">
-            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-        </form>
-    </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: #2b2d42;"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #2b2d42;"></button>
-            <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'app/img/pagina/1410013838_BannerWeb_1000x301-SEGUIMIENTO.png' %}" class="d-block w-100" alt="..." data-interval="1000" style="height: 271px; width: auto; object-fit: cover;">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'app/img/pagina/2207063908_BannerWeb_1280x340-01.png' %}" class="d-block w-100" alt="..." data-interval="1000" style="height: 271px; width: auto; object-fit: cover;">
-            </div>
-            <!-- <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div> -->
-            </div>
-            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon icon--previousedited" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon icon--nextedited" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div class="Seccion1" style="width: 85%; margin-left: 9vw;" >
-        <h1 class="h1_title">Buscas lo mejor para tu Buddie!</h1>
-        <div class="d-flex flex-row flex-wrap">
-        <a href="#" style="text-decoration: none; color: #2B2D42">
-            <div class="card card-mobile">
-                <img class="card-img-top card_imagen" src="{% static 'app/img/animales/gato.jpg' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle">Felinos</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none; color: #2B2D42">
-            <div class="card card-mobile">
-                <img class="card-img-top card_imagen" src="{% static 'app/img/animales/perro.jpg' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle">Caninos</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none; color: #2B2D42">
-            <div class="card card-mobile">
-                <img class="card-img-top card_imagen" src="{% static 'app/img/animales/ave.jpg' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle">Aves</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none; color: #2B2D42">
-            <div class="card card-mobile">
-                <img class="card-img-top card_imagen" src="{% static 'app/img/animales/tortuga.jpg' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle">Reptiles</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none; color: #2B2D42">
-            <div class="card card-mobile">
-                <img class="card-img-top card_imagen" src="{% static 'app/img/animales/pez.png' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle">Acuaticos</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none; color: #2B2D42">
-            <div class="card card-mobile">
-                <img class="card-img-top card_imagen" src="{% static 'app/img/animales/hamster.png' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle">Roedores</p>
-                </div>
-            </div>
-        </a>
-        </div>
-    </div>
-    <img src="{% static 'app/img/pagina/donaaqui.png' %}" alt="" class="img__divisor">
-    <div class="Seccion2" style="width: 85%; margin-left: 9vw;" >
-        <h1 class="h1_title">Productos recomendados</h1>
-        <div class="d-flex flex-row flex-wrap">
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/Whiskas.jpg" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Alimento</p>
-                    <p class="card-text card_tittle--nombre">Whiskas - Alimento Húmedo Sobrecito Gatitos Carne Soufflé</p>
-                    <p class="card-text card_tittle--precio">$470</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/master dog.jpg" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Alimento</p>
-                    <p class="card-text card_tittle--nombre">Whiskas - Alimento Húmedo Sobrecito Gatitos Carne Soufflé</p>
-                    <p class="card-text card_tittle--precio">$26.640</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/JUGETE GATO.jpg" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Jugete</p>
-                    <p class="card-text card_tittle--nombre">Afp - Modern Cat Flash Ball Variedad de colores</p>
-                    <p class="card-text card_tittle--precio">$4.390</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/Nina Ottosson-Perro Puzzle Twister Nivel 3 1.png" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Jugete</p>
-                    <p class="card-text card_tittle--nombre">Nina Ottosson - Perro Puzzle Twister Nivel 3</p>
-                    <p class="card-text card_tittle--precio">$28.490</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/ProductoS/AfpMonsterBunchGorroPurpura 2.png" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Accsesorio</p>
-                    <p class="card-text card_tittle--nombre">Afp - Monster Bunch Gorro Purpura</p>
-                    <p class="card-text card_tittle--precio">$10.900</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/hierbadegatos.png" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Jugete</p>
-                    <p class="card-text card_tittle--nombre">Cat It - Play Circuito 3 En 1 Con Pasto</p>
-                    <p class="card-text card_tittle--precio">$21.741</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/22517431528 1.png" alt="Cat It - Senses 2.0 Self-Groomer">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Jugete</p>
-                    <p class="card-text card_tittle--nombre">Cat It - Senses 2.0 Self-Groomer</p>
-                    <p class="card-text card_tittle--precio">$6.081</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/arenero.png" alt="Cat Love - Baño Con Borde Celeste/Gris">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Accesorio</p>
-                    <p class="card-text card_tittle--nombre">Cat Love - Baño Con Borde Celeste/Gris</p>
-                    <p class="card-text card_tittle--precio">$11.301</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/PennPlaxIncDormitorioGatoPremium 1.png" alt="Penn Plax Inc - Dormitorio Gato Premium Catbc1">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Accesorio</p>
-                    <p class="card-text card_tittle--nombre">Penn Plax Inc - Dormitorio Gato Premium Catbc1</p>
-                    <p class="card-text card_tittle--precio">$20.358</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/camaperro.png" alt="Pawise - 3En1 Cama, Manta y Cojin">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Accesorio</p>
-                    <p class="card-text card_tittle--nombre">Pawise - 3En1 Cama, Manta y Cojin</p>
-                    <p class="card-text card_tittle--precio">$27.990</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/HaltiCoaBaskervilleUltraMuzzle 1.png" alt="Halti - Coa Baskerville Ultra Muzzle">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Accsesorio</p>
-                    <p class="card-text card_tittle--nombre">Halti - Coa Baskerville Ultra Muzzle</p>
-                    <p class="card-text card_tittle--precio">$26.990</p>
-                </div>
-            </div>
-        </a>
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="img/Productos/SpotJuguetePlayStrongPelotaConCuerda 1.png" alt="Spot - Juguete Play Strong Pelota Con Cuerda">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">Jugete</p>
-                    <p class="card-text card_tittle--nombre">Cat It - Play Circuito 3 En 1 Con Pasto</p>
-                    <p class="card-text card_tittle--precio">$17.990</p>
-                </div>
-            </div>
-        </a>
-        </div>
-    </div>
-    <footer>
-        <div class="footer_divisor">
-            <h1>CONTACTO</h1>
-            <h2>EMAIL:</h2>
-            <p>ecommerce@budstore.cl</p>
-            <h2>MESA CENTRAL:</h2>
-            <p>+569 1234 5678</p>
-            <h2>Horarios de atención:</h2>
-            <p>Lunes a Viernes <br>
-                08:30 a 17:30 <br>
-                Sábados <br>
-                09:00 a 14:00
-            </p>
-        </div>
-        <div class="footer_divisor">
-            <h1>ENCUÉNTRANOS</h1>
-            <p>Sucursales Buddies Store</p>
-            <h2>Oficinas Comerciales:</h2>
-            <p>Av.Concha Y Toro, Av. San Carlos 1340, <br> Puente Alto - Santiago.</p>
-            <h2>Otras Consultas:</h2>
-            <p>contacto@budstore.cl</p>
-        </div>
-        <div class="footer_divisor">
-            <h1>EMPRESA</h1>
-            <a href="#">
-                <h2>Sucursales</h2>
-            </a>
-            <a href="#">
-                <h2>Quienes somos</h2>
-            </a>
-            <a href="#">
-                <h2>Contacto</h2>
-            </a>
-        </div>
-        <div class="footer_divisor">
-            <h1>MÉTODOS DE PAGO</h1>
-            <img src="img/pagina/medios_de_pago.png" alt="">
-        </div>
-        <div class="footer_divisor pb-3">
-            <h1>SÍGUENOS</h1>
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Logo Facebook</title><path fill="#EDF2F4" d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Logo Instagram</title><path fill="#EDF2F4" d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path fill="#EDF2F4" d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>
-        </div>
-    </footer>
-</body>
-</html>
+{% extends 'app/base.html' %}
+{% load static %}
 
-
+{% block contenido %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: #2b2d42;"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #2b2d42;"></button>
+        <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'app/img/pagina/1410013838_BannerWeb_1000x301-SEGUIMIENTO.png' %}" class="d-block w-100" alt="..." data-interval="1000" style="height: 271px; width: auto; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/img/pagina/2207063908_BannerWeb_1280x340-01.png' %}" class="d-block w-100" alt="..." data-interval="1000" style="height: 271px; width: auto; object-fit: cover;">
+        </div>
+        <!-- <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+        </div> -->
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon icon--previousedited" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon icon--nextedited" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="Seccion1" style="width: 85%; margin-left: 9vw;" >
+    <h1 class="h1_title">Buscas lo mejor para tu Buddie!</h1>
+    <div class="d-flex flex-row flex-wrap">
+    <a href="#" style="text-decoration: none; color: #2B2D42">
+        <div class="card card-mobile">
+            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/gato.jpg' %}" alt="Card image cap">
+            <div class="card-body card_text">
+                <p class="card-text card_tittle">Felinos</p>
+            </div>
+        </div>
+    </a>
+    <a href="#" style="text-decoration: none; color: #2B2D42">
+        <div class="card card-mobile">
+            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/perro.jpg' %}" alt="Card image cap">
+            <div class="card-body card_text">
+                <p class="card-text card_tittle">Caninos</p>
+            </div>
+        </div>
+    </a>
+    <a href="#" style="text-decoration: none; color: #2B2D42">
+        <div class="card card-mobile">
+            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/ave.jpg' %}" alt="Card image cap">
+            <div class="card-body card_text">
+                <p class="card-text card_tittle">Aves</p>
+            </div>
+        </div>
+    </a>
+    <a href="#" style="text-decoration: none; color: #2B2D42">
+        <div class="card card-mobile">
+            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/tortuga.jpg' %}" alt="Card image cap">
+            <div class="card-body card_text">
+                <p class="card-text card_tittle">Reptiles</p>
+            </div>
+        </div>
+    </a>
+    <a href="#" style="text-decoration: none; color: #2B2D42">
+        <div class="card card-mobile">
+            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/pez.png' %}" alt="Card image cap">
+            <div class="card-body card_text">
+                <p class="card-text card_tittle">Acuaticos</p>
+            </div>
+        </div>
+    </a>
+    <a href="#" style="text-decoration: none; color: #2B2D42">
+        <div class="card card-mobile">
+            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/hamster.png' %}" alt="Card image cap">
+            <div class="card-body card_text">
+                <p class="card-text card_tittle">Roedores</p>
+            </div>
+        </div>
+    </a>
+    </div>
+</div>
+<img src="{% static 'app/img/pagina/donaaqui.png' %}" alt="" class="img__divisor">
+<div class="Seccion2" style="width: 85%; margin-left: 9vw;" >
+    <h1 class="h1_title">Productos recomendados</h1>
+    <div class="d-flex flex-row flex-wrap">
+        {% for p in productos %}
+        <a href="#" style="text-decoration: none;">
+            <div class="card card-mobile--producto">
+                <img class="card-img-top card_imagen--producto" src="{% static 'app/img/Productos/p.nombre.jpg' %}" alt="Card image cap">
+                <div class="card-body card_text">
+                    <p class="card-text card_tittle--tipo">{{p.tipo_producto}}</p>
+                    <p class="card-text card_tittle--nombre">{{p.nombre}}</p>
+                    <p class="card-text card_tittle--precio">{{p.precio}}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock contenido %}
