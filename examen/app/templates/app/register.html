@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class="container-sm mt-5 mb-5 w-50">
+    <h2 class="text-center">Registrar Usuario</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nombreRegister" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreRegister">
+        </div>
+        <div class="mb-3">
+            <label for="emailRegister" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="passRegister" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="passRegister">
+        </div>
+        <div class="mb-3">
+            <label for="confPassRegister" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="confPassRegister">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock contenido %}

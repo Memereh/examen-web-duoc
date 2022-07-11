@@ -15,7 +15,7 @@
     <div class="body_divisor"></div>
     <nav class="navbar navbar--edited">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://google.cl"><img src="img/pagina/logo.png" alt="" class="navbar--edited--image"></a>
+            <a class="navbar-brand" href="https://google.cl"><img src="{% static 'app/img/pagina/logo.png' %} " alt="logo" class="navbar--edited--image"></a>
             <div class="test2">
                 <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="ionicon svg_cart--edited" viewbox="0 0 512 512"><title>Cart</title><circle cx="176" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="400" cy="416" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 80h64l48 272h256"/><path d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg></a>
                 <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="ionicon svg_user--edited" viewbox="0 0 512 512"><title>Person</title><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg></a>
@@ -71,8 +71,8 @@
             <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
         </form>
     </div>
-        {% block productos %}
-        {% endblock productos %}
+        {% block contenido %}
+        {% endblock contenido %}
     <footer>
         <div class="footer_divisor">
             <h1>CONTACTO</h1>
@@ -109,7 +109,7 @@
         </div>
         <div class="footer_divisor">
             <h1>MÉTODOS DE PAGO</h1>
-            <img src="img/pagina/medios_de_pago.png" alt="">
+            <img src="{% static 'app/img/pagina/medios_de_pago.png' %}" alt="medios de pago">
         </div>
         <div class="footer_divisor pb-3">
             <h1>SÍGUENOS</h1>

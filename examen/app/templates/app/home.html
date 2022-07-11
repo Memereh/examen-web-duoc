@@ -1,7 +1,7 @@
 {% extends 'app/base.html' %}
 {% load static %}
 
-{% block productos %}
+{% block contenido %}
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: #2b2d42;"></button>
@@ -85,126 +85,18 @@
 <div class="Seccion2" style="width: 85%; margin-left: 9vw;" >
     <h1 class="h1_title">Productos recomendados</h1>
     <div class="d-flex flex-row flex-wrap">
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/Whiskas.jpg" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Alimento</p>
-                <p class="card-text card_tittle--nombre">Whiskas - Alimento Húmedo Sobrecito Gatitos Carne Soufflé</p>
-                <p class="card-text card_tittle--precio">$470</p>
+        {% for p in productos %}
+        <a href="#" style="text-decoration: none;">
+            <div class="card card-mobile--producto">
+                <img class="card-img-top card_imagen--producto" src="{% static 'app/img/Productos/p.nombre.jpg' %}" alt="Card image cap">
+                <div class="card-body card_text">
+                    <p class="card-text card_tittle--tipo">{{p.tipo_producto}}</p>
+                    <p class="card-text card_tittle--nombre">{{p.nombre}}</p>
+                    <p class="card-text card_tittle--precio">{{p.precio}}</p>
+                </div>
             </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/master dog.jpg" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Alimento</p>
-                <p class="card-text card_tittle--nombre">Whiskas - Alimento Húmedo Sobrecito Gatitos Carne Soufflé</p>
-                <p class="card-text card_tittle--precio">$26.640</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/JUGETE GATO.jpg" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Jugete</p>
-                <p class="card-text card_tittle--nombre">Afp - Modern Cat Flash Ball Variedad de colores</p>
-                <p class="card-text card_tittle--precio">$4.390</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/Nina Ottosson-Perro Puzzle Twister Nivel 3 1.png" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Jugete</p>
-                <p class="card-text card_tittle--nombre">Nina Ottosson - Perro Puzzle Twister Nivel 3</p>
-                <p class="card-text card_tittle--precio">$28.490</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/ProductoS/AfpMonsterBunchGorroPurpura 2.png" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Accsesorio</p>
-                <p class="card-text card_tittle--nombre">Afp - Monster Bunch Gorro Purpura</p>
-                <p class="card-text card_tittle--precio">$10.900</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/hierbadegatos.png" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Jugete</p>
-                <p class="card-text card_tittle--nombre">Cat It - Play Circuito 3 En 1 Con Pasto</p>
-                <p class="card-text card_tittle--precio">$21.741</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/22517431528 1.png" alt="Cat It - Senses 2.0 Self-Groomer">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Jugete</p>
-                <p class="card-text card_tittle--nombre">Cat It - Senses 2.0 Self-Groomer</p>
-                <p class="card-text card_tittle--precio">$6.081</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/arenero.png" alt="Cat Love - Baño Con Borde Celeste/Gris">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Accesorio</p>
-                <p class="card-text card_tittle--nombre">Cat Love - Baño Con Borde Celeste/Gris</p>
-                <p class="card-text card_tittle--precio">$11.301</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/PennPlaxIncDormitorioGatoPremium 1.png" alt="Penn Plax Inc - Dormitorio Gato Premium Catbc1">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Accesorio</p>
-                <p class="card-text card_tittle--nombre">Penn Plax Inc - Dormitorio Gato Premium Catbc1</p>
-                <p class="card-text card_tittle--precio">$20.358</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/camaperro.png" alt="Pawise - 3En1 Cama, Manta y Cojin">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Accesorio</p>
-                <p class="card-text card_tittle--nombre">Pawise - 3En1 Cama, Manta y Cojin</p>
-                <p class="card-text card_tittle--precio">$27.990</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/HaltiCoaBaskervilleUltraMuzzle 1.png" alt="Halti - Coa Baskerville Ultra Muzzle">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Accsesorio</p>
-                <p class="card-text card_tittle--nombre">Halti - Coa Baskerville Ultra Muzzle</p>
-                <p class="card-text card_tittle--precio">$26.990</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none;">
-        <div class="card card-mobile--producto">
-            <img class="card-img-top card_imagen--producto" src="img/Productos/SpotJuguetePlayStrongPelotaConCuerda 1.png" alt="Spot - Juguete Play Strong Pelota Con Cuerda">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle--tipo">Jugete</p>
-                <p class="card-text card_tittle--nombre">Cat It - Play Circuito 3 En 1 Con Pasto</p>
-                <p class="card-text card_tittle--precio">$17.990</p>
-            </div>
-        </div>
-    </a>
+        </a>
+        {% endfor %}
     </div>
 </div>
-{% endblock productos %}
+{% endblock contenido %}
