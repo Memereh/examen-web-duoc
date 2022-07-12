@@ -9,8 +9,17 @@ from .forms import ContactoForm
 
 class Productos(APIView):
     def get(self, request):
-        nombre = request.GET.get('nombre')
-        return Response({'message': 'Listado de Productos '+nombre})
+        try:
+            idp = request.GET.get('id')
+            objProducto = PRODUCTOS.objects.get(id=idp)
+            nombre = objProducto.nombre
+            precio = objProducto.precio
+            stock = objProducto.stock
+            descripcion = objProducto.descripcion
+            imagen = objProducto.imagen.url
+            return Response({'message': 'Producto obtenido ','nombre':nombre,'precio':precio,'stock':stock,'descripcion':descripcion,'imagen':imagen})
+        except Exception as e:
+            return Response({'message': 'No se encontro el producto', 'error': str(e)})
     def post(self, request):
         if ("nombre","descripcion","precio" in request.data):
             nombre = request.data.get('nombre')
