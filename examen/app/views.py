@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
+from .forms import ContactoForm
 
 # Create your views here.
 
@@ -62,8 +63,10 @@ class TipoProducto(APIView):
 
 def home(request):
     productos = PRODUCTOS.objects.all()
+    mascotas = TIPO_MASCOTA.objects.all()
     data = {
-        'productos': productos
+        'productos': productos,
+        'mascotas': mascotas
         }
     return render(request, 'app/home.html', data)
 
@@ -71,7 +74,10 @@ def register(request):
     return render(request, 'app/register.html')
 
 def about(request):
-    return render(request, 'app/sobrenosotros.html')
+    data = {
+        'form': ContactoForm()
+    }
+    return render(request, 'app/sobrenosotros.html', data)
 
 def productos(request):
     return render(request, 'app/productos.html')

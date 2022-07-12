@@ -8,7 +8,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #2b2d42;"></button>
         <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner ">
         <div class="carousel-item active">
             <img src="{% static 'app/img/pagina/1410013838_BannerWeb_1000x301-SEGUIMIENTO.png' %}" class="d-block w-100" alt="..." data-interval="1000" style="height: 271px; width: auto; object-fit: cover;">
         </div>
@@ -28,74 +28,47 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<div class="Seccion1" style="width: 85%; margin-left: 9vw;" >
+<div class="container mt-5">
     <h1 class="h1_title">Buscas lo mejor para tu Buddie!</h1>
-    <div class="d-flex flex-row flex-wrap">
-    <a href="#" style="text-decoration: none; color: #2B2D42">
-        <div class="card card-mobile">
-            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/gato.jpg' %}" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle">Felinos</p>
-            </div>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-xl-6  g-3">
+        {% for m in mascotas %}
+        <div class="col">
+            <a href="#" style="text-decoration: none; color: #2B2D42">
+                <div class="card card-mobile">
+                    <img class="card-img-top card_imagen" src="{{m.imagen.url}}" alt="Card image cap">
+                    <div class="card-body card_text">
+                        <p class="card-text card_tittle">{{m.nombre}}</p>
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
-    <a href="#" style="text-decoration: none; color: #2B2D42">
-        <div class="card card-mobile">
-            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/perro.jpg' %}" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle">Caninos</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none; color: #2B2D42">
-        <div class="card card-mobile">
-            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/ave.jpg' %}" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle">Aves</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none; color: #2B2D42">
-        <div class="card card-mobile">
-            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/tortuga.jpg' %}" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle">Reptiles</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none; color: #2B2D42">
-        <div class="card card-mobile">
-            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/pez.png' %}" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle">Acuaticos</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" style="text-decoration: none; color: #2B2D42">
-        <div class="card card-mobile">
-            <img class="card-img-top card_imagen" src="{% static 'app/img/animales/hamster.png' %}" alt="Card image cap">
-            <div class="card-body card_text">
-                <p class="card-text card_tittle">Roedores</p>
-            </div>
-        </div>
-    </a>
+        {% endfor %}
     </div>
 </div>
-<img src="{% static 'app/img/pagina/donaaqui.png' %}" alt="" class="img__divisor">
-<div class="Seccion2" style="width: 85%; margin-left: 9vw;" >
+
+<div class="container mt-5 mb-5">
+    <img src="{% static 'app/img/pagina/donaaqui.png' %}" alt="" class="w-100 h-100">
+</div>
+
+{% load humanize %}
+<div class="container mt-5">
     <h1 class="h1_title">Productos recomendados</h1>
-    <div class="d-flex flex-row flex-wrap">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-xl-6 g-3">
         {% for p in productos %}
-        <a href="#" style="text-decoration: none;">
-            <div class="card card-mobile--producto">
-                <img class="card-img-top card_imagen--producto" src="{% static 'app/img/Productos/p.nombre.jpg' %}" alt="Card image cap">
-                <div class="card-body card_text">
-                    <p class="card-text card_tittle--tipo">{{p.tipo_producto}}</p>
-                    <p class="card-text card_tittle--nombre">{{p.nombre}}</p>
-                    <p class="card-text card_tittle--precio">{{p.precio}}</p>
-                </div>
+            <div class="col">
+                {% if p %}
+                    <a href="#" style="text-decoration: none;">
+                        <div class="card card-mobile--producto">
+                            <img class="card-img-top card_imagen--producto" src="{{p.imagen.url}}" alt="Card image cap">
+                            <div class="card-body card_text">
+                                <p class="card-text card_tittle--tipo">{{p.tipo_producto | capfirst}}</p>
+                                <p class="card-text card_tittle--nombre">{{p.nombre | title}}</p>
+                                <p class="card-text card_tittle--precio">${{p.precio | intcomma}}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% endif %}
             </div>
-        </a>
         {% endfor %}
     </div>
 </div>
